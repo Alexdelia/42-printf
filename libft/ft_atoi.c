@@ -6,31 +6,36 @@
 /*   By: adelille <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/25 16:48:38 by adelille          #+#    #+#             */
-/*   Updated: 2020/10/27 21:53:59 by adelille         ###   ########.fr       */
+/*   Updated: 2020/11/30 21:50:26 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *nptr)
+int	ft_atoi(char const *str)
 {
-	int	i;
-	int	res;
-	int	neg;
+	int				i;
+	long long int	sign;
+	long long int	nb;
 
+	nb = 0;
 	i = 0;
-	res = 0;
-	neg = 1;
-	while (nptr[i] == '\t' || nptr[i] == '\v' || nptr[i] == '\n'
-			|| nptr[i] == '\f' || nptr[i] == '\r' || nptr[i] == ' ')
+	sign = 1;
+	while (((str[i] > 8 && str[i] < 14) || str[i] == 32))
 		i++;
-	if (nptr[i] == '-' || nptr[i] == '+')
+	while (str[i] == '+' || str[i] == '-')
 	{
-		if (nptr[i] == '-')
-			neg = -neg;
+		sign = (str[i] == '-' ? -1 : sign);
 		i++;
 	}
-	while (nptr[i] >= '0' && nptr[i] <= '9')
-		res = res * 10 + (nptr[i++] - 48);
-	return (res * neg);
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		nb = nb * 10 + ((long long int)str[i] - 48);
+		if (nb > 2147483648 && sign == 1)
+			return (-1);
+		if (nb > 2147483648 && sign == -1)
+			return (0);
+		i++;
+	}
+	return (nb * sign);
 }
