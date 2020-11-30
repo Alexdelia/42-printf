@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_utils1.c                                        :+:      :+:    :+:   */
+/*   ft_utils.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/26 19:23:04 by adelille          #+#    #+#             */
-/*   Updated: 2020/11/26 20:36:01 by adelille         ###   ########.fr       */
+/*   Created: 2020/11/30 18:29:10 by adelille          #+#    #+#             */
+/*   Updated: 2020/11/30 19:07:50 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,4 +41,57 @@ int			ft_is_type(char c)
 					(c == 'u') ||
 					(c == 'x') ||
 					(c == 'X'));
+}
+
+int			nbr_len(int n)
+{
+	int	i;
+
+	i = 0;
+	if (n <= 0)
+		i++;
+	while (n)
+	{
+		n /= 10;
+		i++;
+	}
+	return (i);
+}
+
+int			ft_nbr_len_base(t_options options, long nb)
+{
+	int	divider;
+	int	size;
+
+	if (options.type == 'd' || options.type == 'i' || options.type == 'u')
+		divider = 10;
+	else if (options.type == 'X' || options.type == 'x' || options.type == 'p')
+		divider = 16;
+	size = 0;
+	if (nb <= 0)
+		size++;
+	while (nb)
+	{
+		nb /= divider;
+		size++;
+	}
+	return (size);
+}
+
+void		ft_get_options_len(t_options *options, char **nbr, int nb)
+{
+	if (options->dot == 1 && options->precision == 0 && nb == 0)
+	{
+		options->len = 0;
+		free(*nbr);
+		*nbr = "";
+	}
+	else
+		options->len = ft_strlen(*nbr);
+	if (options->precision < 0 && options->precision_star == 0)
+	{
+		options->minus = 1;
+		options->nb_of_fill = options->precision * -1 - options->len;
+		options->wid = 0;
+	}
 }
