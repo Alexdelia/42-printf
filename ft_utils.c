@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/30 18:29:10 by adelille          #+#    #+#             */
-/*   Updated: 2020/11/30 19:59:44 by adelille         ###   ########.fr       */
+/*   Updated: 2020/11/30 21:04:55 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ int			ft_nbr_len_base(t_options options, long nb)
 
 	if (options.type == 'd' || options.type == 'i' || options.type == 'u')
 		divider = 10;
-	else if (options.type == 'X' || options.type == 'x' || options.type == 'p')
+	if (options.type == 'X' || options.type == 'x' || options.type == 'p')
 		divider = 16;
 	size = 0;
 	if (nb <= 0)

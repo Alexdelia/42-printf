@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/30 18:28:44 by adelille          #+#    #+#             */
-/*   Updated: 2020/11/30 20:22:09 by adelille         ###   ########.fr       */
+/*   Updated: 2020/11/30 20:37:33 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char	ft_fill_nbr(t_options options, unsigned long *nb)
 	}
 	if (options.type == 'x' || options.type == 'X' || options.type == 'p')
 	{
-		if (options.type == 'X' || options.type == 'p')
+		if (options.type == 'x' || options.type == 'p')
 			c = base_lowcase[*nb % 16];
 		else
 			c = base_upcase[*nb % 16];
