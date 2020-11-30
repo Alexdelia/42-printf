@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/26 19:30:27 by adelille          #+#    #+#             */
-/*   Updated: 2020/11/30 20:19:30 by adelille         ###   ########.fr       */
+/*   Updated: 2020/11/30 21:58:50 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,7 +104,7 @@ void		ft_get_options(char const *input, va_list arg_list,
 	{
 		ptr = ft_is_minus_or_zero(ptr, options);
 		if (*ptr == '.')
-			return(ft_is_dot(ptr, arg_list, options));
+			return (ft_is_dot(ptr, arg_list, options));
 		if (*ptr == '*')
 			ft_is_star(arg_list, options, 1);
 		if (*ptr >= '1' && *ptr <= '9')
