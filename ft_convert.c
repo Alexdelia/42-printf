@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/26 20:48:06 by adelille          #+#    #+#             */
-/*   Updated: 2020/11/30 19:04:52 by adelille         ###   ########.fr       */
+/*   Updated: 2020/11/30 20:17:34 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ int		ft_convert_s(t_options options, char *str)
 		options.fill_char = '0';
 	res = ft_print(options, str);
 	if (to_free == 1)
-		free (str);
+		free(str);
 	return (res);
 }
 
@@ -97,4 +97,7 @@ int		ft_convert_diux(t_options options, long nb)
 	if (options.wid > ft_strlen(nbr))
 		options.nb_of_fill = options.wid - ft_strlen(nbr);
 	res = ft_print(options, nbr);
+	if (!(options.dot == 1 && options.precision == 0 && nb == 0))
+		free(nbr);
+	return (res);
 }

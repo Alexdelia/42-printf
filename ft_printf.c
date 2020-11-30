@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/26 18:14:28 by adelille          #+#    #+#             */
-/*   Updated: 2020/11/26 21:10:05 by adelille         ###   ########.fr       */
+/*   Updated: 2020/11/30 20:00:11 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_print_flag(t_options options, va_list arg_list, int *size)
 {
 	if (!ft_is_type(options.type))
 		*size += ft_print_char(options, options.type);
-	else if (options.type == 's' && options.precision < 0 
+	else if (options.type == 's' && options.precision < 0
 					&& options.precision_star == 0)
 	{
 		options.len = options.precision * -1;
@@ -26,7 +26,7 @@ void	ft_print_flag(t_options options, va_list arg_list, int *size)
 		*size += ft_convert_s(options, "");
 	}
 	else
-		*size += ft_printf_arg(options, arg_list);
+		*size += ft_print_arg(options, arg_list);
 }
 
 int		ft_detect(va_list arg_list, char const *input)

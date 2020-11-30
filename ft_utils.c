@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/30 18:29:10 by adelille          #+#    #+#             */
-/*   Updated: 2020/11/30 19:07:50 by adelille         ###   ########.fr       */
+/*   Updated: 2020/11/30 19:59:44 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 t_options	ft_init_options(void)
 {
 	t_options	options;
-	
+
 	options.minus = 0;
 	options.zero = 0;
 	options.dot = 0;

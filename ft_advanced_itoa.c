@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/30 18:28:44 by adelille          #+#    #+#             */
-/*   Updated: 2020/11/30 18:28:49 by adelille         ###   ########.fr       */
+/*   Updated: 2020/11/30 20:22:09 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,8 @@ char	*ft_create_nbr(t_options *options, int size, long n)
 	char	*nbr;
 	int		malloc_size;
 
-	if (options->dot == 0 && options-> zero == 1)
-		options->precision = options ->wid;
+	if (options->dot == 0 && options->zero == 1)
+		options->precision = options->wid;
 	if (options->precision > size)
 	{
 		malloc_size = options->precision + 1;
@@ -64,7 +64,7 @@ char	*ft_init_itoa(long n, t_options options, int *size, int *i)
 	int		j;
 	char	*nbr;
 
-	i = 0;
+	j = 0;
 	if (n < 0)
 	{
 		options.precision++;
@@ -75,8 +75,8 @@ char	*ft_init_itoa(long n, t_options options, int *size, int *i)
 	nbr = ft_create_nbr(&options, *size, n);
 	while (options.precision > 0)
 	{
-		nbr[i] = '0';
-		i++;
+		nbr[j] = '0';
+		j++;
 		*size += 1;
 		options.precision--;
 	}

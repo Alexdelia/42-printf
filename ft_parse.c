@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/26 19:30:27 by adelille          #+#    #+#             */
-/*   Updated: 2020/11/26 20:12:03 by adelille         ###   ########.fr       */
+/*   Updated: 2020/11/30 20:19:30 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ char const	*ft_is_minus_or_zero(char const *ptr, t_options *options)
 			ptr += 1;
 		}
 		ptr--;
-		return (ptr)
+		return (ptr);
 	}
 	return (ptr);
 }
@@ -41,7 +41,7 @@ int			ft_get_precision(char const *ptr)
 	return (0);
 }
 
-void		ft_is_dot(char const *ptr, va_list arg_list, t_options *options);
+void		ft_is_dot(char const *ptr, va_list arg_list, t_options *options)
 {
 	char const	*tmp;
 
@@ -52,7 +52,7 @@ void		ft_is_dot(char const *ptr, va_list arg_list, t_options *options);
 	if (*tmp == '*')
 	{
 		options->precision_star = 1;
-		ft_is_star(arg_list, options 0);
+		ft_is_star(arg_list, options, 0);
 		ptr += 1;
 	}
 	else

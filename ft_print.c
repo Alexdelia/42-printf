@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/26 20:37:05 by adelille          #+#    #+#             */
-/*   Updated: 2020/11/30 18:57:35 by adelille         ###   ########.fr       */
+/*   Updated: 2020/11/30 20:07:00 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,18 +55,19 @@ int	ft_print_arg(t_options options, va_list arg_list)
 		return (ft_convert_diux(options, va_arg(arg_list, int)));
 	if (options.type == 'u')
 		return (ft_convert_diux(options, va_arg(arg_list, unsigned int)));
-	if (options.type == 'x' || option.type == 'X')
+	if (options.type == 'x' || options.type == 'X')
 		return (ft_convert_diux(options, va_arg(arg_list, unsigned int)));
+	return (0);
 }
 
-int	ft_prinf_filling_char(int i, char c)
+int	ft_print_filling_char(int i, char c)
 {
 	int	len;
 
 	len = 0;
 	while (i > 0)
 	{
-		write (1, &c, 1);
+		write(1, &c, 1);
 		i--;
 		len++;
 	}
