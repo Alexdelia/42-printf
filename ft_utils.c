@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/30 18:29:10 by adelille          #+#    #+#             */
-/*   Updated: 2020/11/30 21:04:55 by adelille         ###   ########.fr       */
+/*   Updated: 2020/12/01 18:51:02 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,15 +32,15 @@ t_options	ft_init_options(void)
 
 int			ft_is_type(char c)
 {
-	return ((c == '%') ||
-					(c == 'c') ||
+	return ((c == 'c') ||
 					(c == 's') ||
 					(c == 'p') ||
 					(c == 'd') ||
 					(c == 'i') ||
 					(c == 'u') ||
 					(c == 'x') ||
-					(c == 'X'));
+					(c == 'X') ||
+					(c == '%'));
 }
 
 int			nbr_len(int n)

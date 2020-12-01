@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/26 20:37:05 by adelille          #+#    #+#             */
-/*   Updated: 2020/11/30 20:07:00 by adelille         ###   ########.fr       */
+/*   Updated: 2020/12/01 18:49:26 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,6 @@ int	ft_print_arg(t_options options, va_list arg_list)
 {
 	(void)arg_list;
 	(void)options;
-	if (options.type == '%')
-		return (ft_print_char(options, '%'));
 	if (options.type == 'c')
 		return (ft_print_char(options, va_arg(arg_list, int)));
 	if (options.type == 's')
@@ -57,6 +55,8 @@ int	ft_print_arg(t_options options, va_list arg_list)
 		return (ft_convert_diux(options, va_arg(arg_list, unsigned int)));
 	if (options.type == 'x' || options.type == 'X')
 		return (ft_convert_diux(options, va_arg(arg_list, unsigned int)));
+	if (options.type == '%')
+		return (ft_print_char(options, '%'));
 	return (0);
 }
 
