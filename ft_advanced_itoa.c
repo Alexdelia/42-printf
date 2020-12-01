@@ -6,7 +6,7 @@
 /*   By: adelille <adelille@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/30 18:28:44 by adelille          #+#    #+#             */
-/*   Updated: 2020/11/30 20:37:33 by adelille         ###   ########.fr       */
+/*   Updated: 2020/12/01 18:58:33 by adelille         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,8 +91,8 @@ char	*printf_ft_itoa(long n, t_options options)
 	int				i;
 
 	nb = n;
-	if (nb < 0)
-		nb = -nb;
+	if (n < 0)
+		nb = -n;
 	i = 0;
 	size = ft_nbr_len_base(options, nb);
 	nbr = ft_init_itoa(n, options, &size, &i);
